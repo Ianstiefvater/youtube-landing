@@ -10,8 +10,9 @@
 </head>
 <body>
     <header>
-            <ul style="margin: 0px;">
-                <li style="list-style-type: none;"><a href="#pricing" style="text-decoration:none" id="pricing-nav">Pricing</a></li>
+            <ul style="margin: 0px; display:flex">
+                <li style="list-style-type: none; margin-right:10px"><a href="#pricing" style="text-decoration:none" class="pricing-nav">Pricing</a></li>
+                <li style="list-style-type: none; margin-left:10px"><a href="#faqs" style="text-decoration:none" class="pricing-nav">FAQs</a></li>
            </ul>
     </header>
     <section id="hero">
@@ -236,10 +237,88 @@
             </div>
         </div>
     </section>
+    <section id="faqs">
+        <h2>FAQs</h2>
+        <div id="faqs-box">
+            <div class="faq-item">
+                <h3 class="faq-question">What is the YouTube Transcription API and why is it useful?<span class="arrow">&#9660;</span></h3>
+                <div class="faq-answer">
+                    <p>The YouTube Transcription API allows you to transcribe YouTube videos up to 5 minutes in length using advanced speech-to-text technology. It is useful for developers who need to integrate subtitles, enhance accessibility, or conduct content analysis within their applications.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">Is the YouTube Transcription API free to use?<span class="arrow">&#9660;</span></h3>
+                <div class="faq-answer">
+                    <p>The API offers limited free access which allows developers to test and integrate the service within their applications. For extended use and higher request volumes, please refer to our pricing section on RapidAPI.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">How can I ensure the accuracy of transcriptions provided by the API?<span class="arrow">&#9660;</span></h3>
+                <div class="faq-answer">
+                    <p>The API uses advanced algorithms to provide high accuracy in transcriptions. However, the clarity of the audio in the YouTube video and the spoken language's compatibility with our system can affect the transcription's accuracy. Always review transcriptions for critical applications.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">What are the common errors I might encounter while using the API, and how can I handle them?<span class="arrow">&#9660;</span></h3>
+                <div class="faq-answer">
+                    <p>Answer: Common errors include 'No video URL provided', 'Invalid URL', 'Video duration exceeds the allowed limit', and 'URL not recognized'. Ensure that the video URL is correct, the video is under 5 minutes, and you adhere to the formatting requirements specified in the API documentation</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">Can I use the YouTube Transcription API for videos longer than 5 minutes?<span class="arrow">&#9660;</span></h3>
+                <div class="faq-answer">
+                    <p>Currently, our API supports videos up to 5 minutes long. If you need to transcribe longer videos, consider segmenting the video into smaller parts or contact us for potential solutions that might accommodate your needs.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">How do I get started with the YouTube Transcription API?<span class="arrow">&#9660;</span></h3>
+                <div class="faq-answer">
+                    <p>Simply sign up or log in to RapidAPI, subscribe to our API, and use the provided endpoint with your API key. The API requires a POST request with a YouTube video URL, and you will receive the transcription in response. Detailed documentation is available on our API page to guide you through the process.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">Can I retrieve transcripts in languages other than English?<span class="arrow">&#9660;</span></h3>
+                <div class="faq-answer">
+                    <p>Yes, the API supports around 99 different languages</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">What should I do if I encounter a server error or other technical issues?<span class="arrow">&#9660;</span></h3>
+                <div class="faq-answer">
+                    <p>If you encounter a 500 Internal Server Error or other technical difficulties, please first check the status of your request and ensure all parameters are correct. If issues persist, contact our support through the RapidAPI platform for further assistance.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">Is there a limit to the number of transcriptions I can request per day?<span class="arrow">&#9660;</span></h3>
+                <div class="faq-answer">
+                    <p>Yes, the API comes with usage quotas which are detailed on our pricing page on RapidAPI. These limits are designed to ensure quality service for all users. Monitor your usage to ensure you stay within the provided limits.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <footer>
         <p>&copy; 2024 Transcription API. All rights reserved.</p>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var faqs = document.querySelectorAll('.faq-question');
+            faqs.forEach(function(faq) {
+                faq.addEventListener('click', function() {
+                    var faqItem = this.parentElement;
+                    if (faqItem.classList.contains('active')) {
+                        faqItem.classList.remove('active');
+                    } else {
+                        document.querySelectorAll('.faq-item').forEach(function(item) {
+                            item.classList.remove('active');
+                        });
+                        faqItem.classList.add('active');
+                    }
+                });
+            });
+        });
+</script>
+
 </body>
 </html>
