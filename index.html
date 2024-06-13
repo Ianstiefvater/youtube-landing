@@ -120,13 +120,13 @@
                 <div class="example">
                     <h2>Example Fetch Request</h2>
                     <pre>
-            fetch('https://tiktok-transcriptor.p.rapidapi.com/transcribe', {
+            fetch('https://youtube-transcriptor1.p.rapidapi.com/transcribe', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'X-RapidAPI-Key': 'YOUR_RAPIDAPI_KEY_HERE'
                 },
-                body: JSON.stringify({ url: 'https://www.tiktok.com/@noahkagan/video/7372729022863658286/' })
+                body: JSON.stringify({ url: 'https://www.youtube.com/shorts/ollcTb0Uts4' })
             })
             .then(response => response.json())
             .then(data => console.log(data))
@@ -139,7 +139,7 @@
                 <h2>Example JSON Response</h2>
                 <pre>
         {
-            "transcription": "I only fly private now. What kind of plane do you have? I don't have a plane yet because we're looking at buying a property that has a hangar, or we can put the plane there. How much do you think you spent a year on planes? Couple million."
+            "transcription": "Zuckerberg, he had this old lady next to him. It's like, you're the man. You know everything. What do you need her for? He's like, I need a coach. Now, it's a business coach. And it's kind of insane, you have Peter Teal. He had a lot of elated buzzers around him. Every business out there, if you look at every professional athlete out there, they all have coaches. It's really hard to see yourself without a mirror. Bill Campbell, he coached Steve Jobs, Larry Page, Eric Schmidt. It can work for other people. If you learn from them and it works for you, great. Do that."
         }
 
                 </pre>
